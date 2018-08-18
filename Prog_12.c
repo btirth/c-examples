@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
-#include<math.h> //for maths eq
+#include<math.h>
 
 
 void main()
