@@ -8,7 +8,7 @@ void main()
 {
 	int n,c=0,p,d,sum=0,q;
 	clrscr();
-	printf("Enter the number=");
+	printf("Enter the number=");   //check armstrong number
 	scanf("%d",&n);
 	p=n;
 	q=n;
