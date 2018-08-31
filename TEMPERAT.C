@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+#include<conio.h>  //to convert into celsius
 #define F_lower 0
 #define F_upper 250
 #define step 25
