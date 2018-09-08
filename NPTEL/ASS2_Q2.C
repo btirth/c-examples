@@ -7,39 +7,30 @@ in the input signals the end of the input.)
 Find the second largest number in the input. You may not use arrays.
 */
 #include<stdio.h>
-#include<conio.h>
-#include<math.h>
+
 void main()
 {
-  int a,n=0,t=0,s=0,p=0,n1=0,n2=0,n3=0;
-  clrscr();
-  scanf("%d",&a);
-  while(a!=-1)
+  //ip is to scan  a sequence of integers as input
+  //largest number is stored in variable 'largest'
+  //2nd largest number is stored in variable 'largest_2'
+  int ip,largest_2=-2147483648,largest=-2147483648,temp=0;
+  scanf("%d",&ip);
+  while(ip!=-1)
   {
-    if(a>n)
+    if(ip>largest_2)
     {
-      n=a;
-      if(n>t)
+      largest_2=ip;
+      if(largest_2>largest)
       {
-	n1=t;
-	t=n;
-	n=n1;
-	if(t>s)
-	{
-	  n2=s;
-	  s=t;
-	  t=n2;
-	  if(s>p)
-	  {
-	    n3=p;
-	    p=s;
-	    s=n3;
-	  }
-	}
+        //swap 'largest' and 'largest_2'
+        temp=largest;
+        largest=largest_2;
+        largest_2=temp;
       }
     }
-    scanf("%d",&a);
+  //keep scaning
+  scanf("%d",&ip);
   }
-  printf("%d",t);
-  getch();
-}
+  printf("%d",largest_2);//final output
+  
+}  
