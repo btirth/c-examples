@@ -1,3 +1,5 @@
+/*WAP to enter the sides of the triangle and find whether the triangle is equilateral, isosceles or scalene. 
+(Use nested if… else).*/
 #include<stdio.h>
 #include<conio.h>
 
