@@ -21,14 +21,17 @@ int main()
     
   {
         /* If the current character(str[i]) is white space */
-     
+     printf("Current character=%c\n",str[i]);
+      printf("i is %d\n",i);
         if(i!=0&&str[i]==' '&&flag==0)
         {
-            words++;
+          printf("inside if\n");  
+          words++;
             flag=1;
         }
       else
       {
+        printf("inside else\n")
         flag=0;
       }
     
@@ -37,7 +40,7 @@ int main()
   
   
 
-    printf("%d", words);
+    printf("%d\n", words);
 
     return 0;
 }
