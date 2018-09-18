@@ -20,7 +20,7 @@ int main()
     
   {
         /* If the current character(str[i]) is white space */
-        if(str[i]==' ' || str[i]=='\t'||str[i]=='.'||str[i]==','||str[i]==';')
+        if(str[i]==' ')
         {
             words++;
         }
