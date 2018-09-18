@@ -5,8 +5,8 @@
 int main()
 {
   char str[100];
-    int i, words;
-  bool previous_space' = false;
+    int i, words,flag=0;
+  
 
     /* Input string from user */
     printf("Enter any string: ");
@@ -21,19 +21,19 @@ int main()
     
   {
         /* If the current character(str[i]) is white space */
-     if(previous_space == false)
-        if(str[i]==' ')
+     
+        if(str[i]==' '&&flag==0)
         {
             words++;
-          previous_space = true;
+            flag=1;
         }
       else
       {
-        previous_space = false;
+        flag=0;;
       }
-    }
+    
         i++;
-    }
+  }
   
   
 
