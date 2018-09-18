@@ -21,12 +21,17 @@ int main()
     
   {
         /* If the current character(str[i]) is white space */
+     if(previous_space == false)
         if(str[i]==' ')
         {
             words++;
           previous_space = true;
         }
-
+      else
+      {
+        previous_space = false;
+      }
+    }
         i++;
     }
   
