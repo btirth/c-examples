@@ -6,6 +6,7 @@ int main()
 {
   char str[100];
     int i, words;
+  bool previous_space' = false;
 
     /* Input string from user */
     printf("Enter any string: ");
@@ -23,6 +24,7 @@ int main()
         if(str[i]==' ')
         {
             words++;
+          previous_space = true;
         }
 
         i++;
