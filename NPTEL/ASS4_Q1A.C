@@ -14,7 +14,7 @@ no such number, output NO.ss*/
 
 void main()
 {
-  int arr1[20],i=0,arr2[20],n1,n2,min=arr1[0],flag=0;
+  int arr1[20],i=0,arr2[20],n1,n2,min=2147483647,flag=0;
   scanf("%d",&n1);
   for(i=0;i<n1;i++)
   {
@@ -23,7 +23,7 @@ void main()
   }
   for(i=0;i<n1;i++)
   {
-    if(arr1[i]<=arr1[0])
+    if(arr1[i]<=min)
       min=arr1[i];
   }
   scanf("%d",&n2);
