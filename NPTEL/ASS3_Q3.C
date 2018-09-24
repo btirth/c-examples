@@ -5,14 +5,15 @@
 int main()
 {
   char str[100];
-    int i, words;
+    int i, words,flag=0;
+  
 
     /* Input string from user */
     printf("Enter any string: ");
     scanf("%s",str);
   
 
-    i = 1;
+    i = 0;
     words = 0;
 
     /* Runs a loop till end of string */
@@ -20,17 +21,26 @@ int main()
     
   {
         /* If the current character(str[i]) is white space */
-        if(str[i]==' ' || str[i]=='\t'||str[i]=='.'||str[i]==','||str[i]==';')
+     printf("Current character=%c\n",str[i]);
+      printf("i is %d\n",i);
+        if(i!=0&&str[i]==' '&&flag==0)
         {
-            words++;
+          printf("inside if\n");  
+          words++;
+            flag=1;
         }
-
+      else
+      {
+        printf("inside else\n")
+        flag=0;
+      }
+    
         i++;
-    }
+  }
   
   
 
-    printf("%d", words);
+    printf("%d\n", words);
 
     return 0;
 }
