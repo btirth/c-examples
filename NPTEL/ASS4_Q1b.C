@@ -31,14 +31,12 @@ Output: 2*/
 
 void main()
 {
-  int j,temp,arr1[20],i=0,arr2[20],n1,n2,min=2147483647,flag=0;
-  scanf("%d",&n1);    //scan size of first array
-  if(n1!=0)           //to check array is either empty or not
-  {
-  	for(i=0;i<n1;i++)
-  	{
-		scanf("%d",&arr1[i]);     //scan value of  first array
-  	}
+	int j,temp,arr1[20],i=0,arr2[20],n1,n2,min=2147483647,flag=0;
+	scanf("%d",&n1);    //scan size of first array
+		for(i=0;i<n1;i++)
+		{
+			scanf("%d",&arr1[i]);     //scan value of  first array
+		}
 	for(i=0;i<n1;i++)
 		for(j=0;j<n1;j++)
 		{
@@ -48,17 +46,13 @@ void main()
 				arr1[j+1]=arr1[j];
 				arr1[j]=temp;
 			}
-		}	
-  	for(i=0;i<n1;i++)
-  	{
-    		if(arr1[i]<min)      //to find minimum number
-      		min=arr1[i];
-  	}
-  	scanf("%d",&n2);    //scan size of second array
-  	for(i=0;i<n2;i++)
-    		scanf("%d",&arr2[i]);    //scan value of second array
-  	for(i=0;i<n2;i++)
-		for(j=0;j<i;j++)
+		}
+
+	scanf("%d",&n2);    //scan size of second array
+	for(i=0;i<n2;i++)
+		scanf("%d",&arr2[i]);    //scan value of second array
+	for(i=0;i<n2;i++)
+		for(j=0;j<n2;j++)
 		{
 			if(arr2[j]>arr2[j+1])
 			{
@@ -67,22 +61,20 @@ void main()
 				arr2[j]=temp;
 			}
 		}
-	for(i=0;i<n2;i++)
-    	if(min==arr2[i])         //to check minimum number is present in second array or not
+
+	for(i=0;i<n1;i++)
+	{
+		for(j=0;j<n2;j++)
 		{
-			flag=1;
+			if(arr2[j]==arr1[i])
+			break;
 		}
-  	if(flag==0)
-  	{
-      printf("%d",min);
-    }
-  	else
-  	{
-    	printf("NO");
-  	}
-  }
-  else           //if first array is empty minimum number is 0 
-  {
-    printf("0");
-  }
+		if(j==n2)
+	       {	printf("%d",arr1[i]);
+			flag=1;
+	       }
 	}
+	if(flag==0)
+	printf("NO");
+	getch();
+  }
