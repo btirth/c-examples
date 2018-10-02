@@ -1,72 +1,36 @@
-/*Find the number of distinct numbers in a given sequence.*/
-/*Input:
-The input consists of two lines.
-The first line consists of a positive number N. N is at most 1000.
-The second line consists of N numbers separated by spaces.
+/*Find the number of distinct numbers in a given sequence*/
+#include<stdio.h>
 
-Output:
-The output should be the number of distinct elements in the sequence.
+int unique_elements(int arr[], int n) {
 
-Sample Input:
-4 
-1 2 3 1 */
+    int counted[n], j, k, count, flag;
 
+    counted[0] = arr[0]; 
 
+    count = 1;/*one element is counted*/
 
-/*#include<stdio.h>
-void main()
-{
-  int n,arr1[1001],arr2[1001],count=0,i=0,j=0;
-  clrscr();
+        for(j=0; j <= n-1; ++j) {
+        flag = 1;;
+        /*the counted array will always have 'count' elements*/
+        for(k=0; k < count; ++k) {
+            if(arr[j] == counted[k]) {
+                flag = 0;
+            }
+        }
+        if(flag == 1) {
+            ++count;
+            counted[count-1] = arr[j];
+        }
+    }
+    return count;
+}
+int main(void) {
+    int arr[1000],i=0,n;
   scanf("%d",&n);
   for(i=0;i<n;i++)
-	{
-    scanf("%d",&arr1[i]);
-  }
-  for(i=0,j=0;i<n&&j<n;i++,j++)
-   { arr2[j]=arr1[i];
-  //  printf("%d\n",arr2[j]);
-    }
-  //  for(i=0;i<n;i++)
-  //  printf("\n\n%d",arr1[i]);
-  for(i=0;i<n;i++)
   {
-    for(j=0;j<n;j++)
-    {
-      if(arr1[i]==arr2[j])
-	count++;
- //     printf("----%d=%d\n",arr1[i],arr2[j]);
-    }
-
-//    printf("%d,%d\n",i,count);
+    scanf("%d",&arr[i]);
   }
-.	printf("%'d",n-(count/4));
-getch();
-} */
-#include<stdio.h>
-#include<conio.h>
-int i,count;
-int check(int a[i],int i,int count)       //to check entered number is distinct or not
-{
-	int j;
-	for(j=0;j<i;j++)
-	{
-		if(a[i]!=a[i-j])
-		{count++;}
-	}
-	return count;
+    printf("%d", unique_elements(arr, n));
+    return 0;
 }
-void main()
-{
-	int i,n,a[100],count=0;
-	scanf("%d",&n);
-	for(i=0;i<n;i++)
-	{
-		scanf("%d",&a[i]);
-		check(a[i],i,count); //to check entered number is distinct or not
-	}
-	printf("%d",count);
-	getch();
-
-}
-
