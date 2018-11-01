@@ -1,0 +1,45 @@
+/*creat upper triangle matrix fron given matrix*/
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int arr1[10][10],i,j,n;
+	float determinant=0;
+
+	clrscr();
+	printf("\n\nDisplay the upper triangular of a given matrix :\n");
+	printf("----------------------------------------------\n");
+
+	printf("Input the size of the square matrix : ");
+	scanf("%d", &n);
+	printf("\nInput elements in the first matrix :\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("element - [%d],[%d] : ",i,j);
+			scanf("%d",&arr1[i][j]);
+		}
+	}
+	printf("The matrix is :\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n ;j++)
+			printf("% 4d",arr1[i][j]);
+		printf("\n");
+	}
+
+	printf("\nSetting zero in upper triangular matrix\n");
+	for(i=0;i<n;i++)
+	{
+	printf("\n");
+	for(j=0;j<n;j++)
+	   if(i<=j)
+	     printf("% 4d",arr1[i][j]);
+	   else
+	     printf("% 4d",0);
+  }
+       printf("\n-Tirth Bharatiya");
+       getch();
+}
